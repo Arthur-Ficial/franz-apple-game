@@ -59,7 +59,7 @@ let shakeStart = -Infinity;
 let score = 0;
 let lives = MAX_LIVES;
 let multiplier = 1;
-let moveIntervalMs = 600;
+let moveIntervalMs = 1200;
 let difficultyFactor = 0;
 let lastMoveAt = 0;
 let gameOver = true;
@@ -141,9 +141,8 @@ function resizeCanvas(): void {
 // ---- Difficulty ramp -------------------------------------------------------
 
 function applyDifficulty(): void {
-  if (score >= 25)      { moveIntervalMs = 150; difficultyFactor = 2; }
-  else if (score >= 10) { moveIntervalMs = 300; difficultyFactor = 1; }
-  else                  { moveIntervalMs = 600; difficultyFactor = 0; }
+  moveIntervalMs = 1200;
+  difficultyFactor = 0;
 }
 
 // ---- Apple spawning --------------------------------------------------------
